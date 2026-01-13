@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiba Nahri - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #4A4E69;
+            --secondary: #9A8C98;
+            --accent: #C9ADA7;
+            --light-bg: #F2E9E4;
+            --dark-text: #22223B;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: #0d1b2a;
+            color: #e8eef7;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode header {
+            background: #1a2f45;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--light-bg) 50%, var(--primary) 50%);
+            min-height: 90vh;
+            gap: 2rem;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #1a2f45 50%, #2d4a6f 50%);
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        body.dark-mode .hero-text p {
+            color: #b8c5d6;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .skill-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .hero button {
+            padding: 0.9rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .hero button:hover {
+            background: var(--dark-text);
+        }
+
+        .hero img {
+            max-width: 40%;
+            min-width: 300px;
+            border-radius: 1rem;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+            height: 500px;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 1rem;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        body.dark-mode h2.section-title {
+            color: #a8d5ff;
+        }
+
+        .about {
+            background: var(--light-bg);
+        }
+
+        body.dark-mode .about {
+            background: #1a2f45;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        body.dark-mode .about p {
+            color: #b8c5d6;
+        }
+
+        .experience {
+            background: white;
+        }
+
+        body.dark-mode .experience {
+            background: #0d1b2a;
+        }
+
+        .experience p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        body.dark-mode .experience p {
+            color: #b8c5d6;
+        }
+
+        .experience strong {
+            color: var(--primary);
+        }
+
+        body.dark-mode .experience strong {
+            color: #a8d5ff;
+        }
+
+        .projects {
+            background: var(--light-bg);
+        }
+
+        body.dark-mode .projects {
+            background: #1a2f45;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-left: 5px solid var(--secondary);
+        }
+
+        body.dark-mode .project-card {
+            background: #0d1b2a;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        body.dark-mode .project-image {
+            background: linear-gradient(135deg, #2d4a6f, #5a7a9e);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        body.dark-mode .project-content h3 {
+            color: #a8d5ff;
+        }
+
+        .project-content p {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        body.dark-mode .project-content p {
+            color: #b8c5d6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--light-bg);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--secondary);
+            font-weight: 600;
+        }
+
+        body.dark-mode .tech-tag {
+            background: #2d4a6f;
+            color: #a8d5ff;
+            border-color: #7eb3d4;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        body.dark-mode .project-links a {
+            color: #a8d5ff;
+        }
+
+        .contact {
+            background: var(--dark-text);
+            color: white;
+            text-align: center;
+        }
+
+        body.dark-mode .contact {
+            background: #0d1b2a;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        body.dark-mode .contact p {
+            color: #7eb3d4;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.9rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        body.dark-mode .contact-form input,
+        body.dark-mode .contact-form textarea {
+            background: #2d4a6f;
+            color: #e8eef7;
+        }
+
+        .contact-form button {
+            padding: 0.9rem;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--accent);
+        }
+
+        body.dark-mode .contact-form button {
+            background: #7eb3d4;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hiba <span>Nahri</span></h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Hello, I'm</h2>
+            <h1>Hiba Nahri</h1>
+            <p>Fourth-year Network and Telecommunications Engineering Student</p>
+            <div class="skills">
+                <span class="skill-tag">DevOps</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Networking</span>
+                <span class="skill-tag">Signal Processing</span>
+            </div>
+            <a href="#projects"><button>View My Projects</button></a>
+        </div>
+        <img src="profile.jpg" alt="Hiba Nahri" />
+    </div>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <p>Fourth-year network and telecommunications engineering student with strong academic training and practical exposure to networking, DevOps, and data analysis concepts. I have a good working knowledge of Python, basic automation workflows, and signal processing fundamentals.</p>
+        <p>I am comfortable with core networking technologies including TCP/IP, DNS, routing, VLANs, and ACLs, and with network design and simulation using Cisco Packet Tracer. I also have experience handling IoT data and applying introductory machine learning concepts for analysis.</p>
+        <p>I am seeking to further strengthen my technical skills through a professional internship, combining my theoretical knowledge with practical experience in real-world projects.</p>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2 class="section-title">Experience & Skills</h2>
+        <p><strong>Networking & Telecommunications:</strong> TCP/IP, DNS, routing, VLANs, ACLs, Cisco Packet Tracer, network performance assessment tools.</p>
+        <p><strong>Programming & Automation:</strong> Python, basic automation workflows, signal processing fundamentals, IoT data handling.</p>
+        <p><strong>Data Analysis & Machine Learning:</strong> Introductory machine learning concepts, data analysis, IoT sensor data processing, anomaly detection.</p>
+        <p><strong>DevOps & Tools:</strong> GitHub, CI/CD concepts, Linux basics, network analysis tools, NetSpot for Wi-Fi coverage analysis.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">CI/CD</div>
+                <div class="project-content">
+                    <h3>Automated CI/CD Pipeline</h3>
+                    <p>Designed and implemented an automated CI/CD pipeline using GitHub Actions to continuously build, test, and deploy a personal web portfolio.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">CI/CD</span>
+                        <span class="tech-tag">DevOps</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hibanahri" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">QAM</div>
+                <div class="project-content">
+                    <h3>QAM Implementation</h3>
+                    <p>Design and implementation of the Quadrature Amplitude Modulation scheme using Python with structured and well-documented code for signal processing.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Signal Processing</span>
+                        <span class="tech-tag">Modulation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hibanahri/QAM-Conception-and-Implementation" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">IoT</div>
+                <div class="project-content">
+                    <h3>IoT Temperature Detection</h3>
+                    <p>Machine learning and deep learning techniques to analyze IoT temperature data and detect abnormal behavior with real-time alerts.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hibanahri" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">WiFi</div>
+                <div class="project-content">
+                    <h3>Wi-Fi Coverage Analysis</h3>
+                    <p>Comprehensive Wi-Fi coverage analysis using NetSpot tool focusing on signal strength, coverage quality, and network performance optimization.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">NetSpot</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Performance Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hibanahri/Etude-sur-NETSPOT" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">Network</div>
+                <div class="project-content">
+                    <h3>Network & Telecom Projects</h3>
+                    <p>Collection of networking and telecommunication projects including TCP/IP, DNS, routing, and Cisco Packet Tracer simulations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">TCP/IP</span>
+                        <span class="tech-tag">Cisco</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hibanahri" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title" style="color: white; border-bottom-color: var(--accent);">Contact Me</h2>
+        <p>Passionate about creating impactful projects. Open to new ideas and always happy to connect.</p>
+        <p>+212 6 14 36 57 88<br>hibanahri8@gmail.com</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/hiba-nahri-370749337/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/hibanahri" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <textarea id="message" rows="4" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        emailjs.init('YOUR_PUBLIC_KEY'); // We'll set this up
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateThemeButton();
+        }
+
+        function updateThemeButton() {
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
+
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+            updateThemeButton();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Send email using EmailJS
+            emailjs.send('service_portfolio', 'template_portfolio', {
+                to_email: 'hibanahri8@gmail.com',
+                from_name: name,
+                from_email: email,
+                message: message
+            }).then(function(response) {
+                alert('Message sent successfully! I will get back to you soon.');
+                event.target.reset();
+            }, function(error) {
+                alert('Failed to send message. Please try again or email me directly at hibanahri8@gmail.com');
+                console.log('FAILED...', error);
+            });
+        }
+    </script>
+</body>
+</html>
