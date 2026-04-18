@@ -1,5 +1,3 @@
-'use client'
-
 import { projects } from '@/lib/projects'
 
 export default function Projects() {
