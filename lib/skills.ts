@@ -25,7 +25,11 @@ export const skills: Skill[] = [
     items: ['Oracle SQL', 'SQL', 'Database Design'],
   },
   {
+    category: 'Cybersecurity',
+    items: ['Network Security', 'Encryption', 'Penetration Testing', 'Security Protocols', 'Threat Analysis'],
+  },
+  {
     category: 'Other',
-    items: ['Machine Learning', 'Deep Learning', 'Signal Processing', 'IoT'],
+    items: ['Machine Learning', 'Deep Learning', 'IoT'],
   },
 ]

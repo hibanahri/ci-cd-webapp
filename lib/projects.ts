@@ -31,20 +31,6 @@ export const projects: Project[] = [
   },
   {
     id: '2',
-    title: 'QAM Conception and Implementation',
-    description:
-      'Design and implementation of the Quadrature Amplitude Modulation (QAM) scheme using Python.',
-    longDescription:
-      'An educational and technical project focused on simulating the operation of QAM modulation through structured and well-documented code. This project demonstrates signal processing concepts and modulation techniques with practical implementation.',
-    technologies: ['Python', 'Signal Processing', 'Modulation', 'Mathematics'],
-    image: '/images/qam-project.jpg',
-    links: {
-      github: 'https://github.com',
-    },
-    category: 'Signal Processing',
-  },
-  {
-    id: '3',
     title: 'IoT Temperature Anomaly Detection Using ML and Deep Learning',
     description:
       'Machine learning and deep learning techniques to analyze IoT temperature data and detect abnormal behavior.',
@@ -59,7 +45,7 @@ export const projects: Project[] = [
     category: 'Machine Learning',
   },
   {
-    id: '4',
+    id: '3',
     title: 'Wi-Fi Coverage Analysis Using NetSpot',
     description:
       'Wi-Fi coverage analysis of laboratory and practical training rooms using the NetSpot tool.',
@@ -73,7 +59,7 @@ export const projects: Project[] = [
     category: 'Networking',
   },
   {
-    id: '5',
+    id: '4',
     title: 'Network & Telecommunication Engineering Projects',
     description:
       'Collection of networking and telecommunication projects including routing, DNS, and TCP/IP implementations.',
