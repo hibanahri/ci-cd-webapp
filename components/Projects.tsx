@@ -9,7 +9,7 @@ export default function Projects() {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow"
