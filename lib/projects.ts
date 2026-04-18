@@ -2,74 +2,54 @@ export interface Project {
   id: string
   title: string
   description: string
-  longDescription: string
   technologies: string[]
-  image: string
   links: {
     github?: string
-    demo?: string
-    article?: string
   }
-  category: string
 }
 
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Automated CI/CD Pipeline for Personal Web Portfolio',
-    description:
-      'Designed and implemented an automated CI/CD pipeline using GitHub Actions to continuously build, test, and deploy a personal web portfolio.',
-    longDescription:
-      'This project demonstrates DevOps automation best practices by implementing a complete CI/CD pipeline. Each code update triggers automatic deployment to GitHub Pages, ensuring fast, reliable, and error-free delivery. The pipeline includes automated testing, code quality checks, and seamless deployment workflows.',
-    technologies: ['GitHub Actions', 'CI/CD', 'GitHub Pages', 'DevOps', 'Automation'],
-    image: '/images/cicd-pipeline.jpg',
+    title: 'Automated CI/CD Pipeline',
+    description: 'Designed and implemented an automated CI/CD pipeline using GitHub Actions to continuously build, test, and deploy a personal web portfolio.',
+    technologies: ['GitHub Actions', 'CI/CD', 'DevOps'],
     links: {
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      github: 'https://github.com/hibanahri/ci-cd-webapp',
     },
-    category: 'DevOps',
   },
   {
     id: '2',
-    title: 'IoT Temperature Anomaly Detection Using ML and Deep Learning',
-    description:
-      'Machine learning and deep learning techniques to analyze IoT temperature data and detect abnormal behavior.',
-    longDescription:
-      'This project applies advanced ML and DL techniques to analyze IoT temperature data collected from servers and laboratory environments. The system detects abnormal temperature behavior to prevent equipment damage and data loss. An interactive interface was developed to connect IoT sensors, perform temperature predictions, and send real-time alerts when thresholds are exceeded.',
-    technologies: ['Python', 'Machine Learning', 'Deep Learning', 'IoT', 'TensorFlow', 'Real-time Alerts'],
-    image: '/images/iot-temperature.jpg',
+    title: 'QAM Implementation',
+    description: 'Design and implementation of the Quadrature Amplitude Modulation scheme using Python with structured and well-documented code for signal processing.',
+    technologies: ['Python', 'Signal Processing', 'Modulation'],
     links: {
-      github: 'https://github.com',
-      demo: 'https://example.com',
+      github: 'https://github.com/hibanahri/QAM-Conception-and-Implementation',
     },
-    category: 'Machine Learning',
   },
   {
     id: '3',
-    title: 'Wi-Fi Coverage Analysis Using NetSpot',
-    description:
-      'Wi-Fi coverage analysis of laboratory and practical training rooms using the NetSpot tool.',
-    longDescription:
-      'This project presents a comprehensive Wi-Fi coverage analysis focusing on signal strength, coverage quality, and network performance. The study evaluates connectivity issues and proposes optimization improvements for laboratory environments.',
-    technologies: ['NetSpot', 'Network Analysis', 'Wi-Fi', 'Networking', 'Performance Analysis'],
-    image: '/images/wifi-coverage.jpg',
+    title: 'Temperature Intelligence Platform',
+    description: 'A smart Industrial IoT platform for temperature monitoring and prediction. Uses machine learning and deep learning models to forecast temperatures, detect anomalies, and send alerts.',
+    technologies: ['Python', 'Machine Learning', 'Deep Learning', 'IoT'],
     links: {
-      article: 'https://example.com',
+      github: 'https://github.com/hibanahri/Temperature-Intelligence-Platform',
     },
-    category: 'Networking',
   },
   {
     id: '4',
-    title: 'Network & Telecommunication Engineering Projects',
-    description:
-      'Collection of networking and telecommunication projects including routing, DNS, and TCP/IP implementations.',
-    longDescription:
-      'Various projects demonstrating networking fundamentals including TCP/IP protocol implementation, DNS configuration, routing algorithms, and network simulation using Cisco Packet Tracer. These projects showcase practical networking knowledge and problem-solving skills.',
-    technologies: ['Networking', 'TCP/IP', 'DNS', 'Routing', 'Cisco Packet Tracer'],
-    image: '/images/networking.jpg',
+    title: 'Wi-Fi Coverage Analysis',
+    description: 'Comprehensive Wi-Fi coverage analysis using NetSpot tool focusing on signal strength, coverage quality, and network performance optimization.',
+    technologies: ['NetSpot', 'Networking', 'Performance Analysis'],
     links: {
-      github: 'https://github.com',
+      github: 'https://github.com/hibanahri/Etude-sur-NETSPOT',
     },
-    category: 'Networking',
+  },
+  {
+    id: '5',
+    title: 'Network & Telecom Projects',
+    description: 'Collection of networking and telecommunication projects including TCP/IP, DNS, routing, and Cisco Packet Tracer simulations.',
+    technologies: ['Networking', 'TCP/IP', 'Cisco'],
+    links: {},
   },
 ]

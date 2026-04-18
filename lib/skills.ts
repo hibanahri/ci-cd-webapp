@@ -9,27 +9,23 @@ export const skills: Skill[] = [
     items: ['C', 'C++', 'Python', 'Java', 'JavaScript'],
   },
   {
-    category: 'Web Technologies',
+    category: 'Frontend / Web Development',
     items: ['HTML', 'CSS', 'React', 'Next.js', 'Tailwind CSS'],
   },
   {
-    category: 'DevOps',
-    items: ['Linux', 'Docker', 'CI/CD', 'GitHub Actions', 'Automation'],
+    category: 'Cloud & DevOps',
+    items: ['AWS (basic)', 'Docker (basic)', 'CI/CD (GitHub Actions)', 'Git & GitHub'],
   },
   {
-    category: 'Networking',
-    items: ['TCP/IP', 'DNS', 'Routing', 'Cisco Packet Tracer', 'Network Analysis'],
+    category: 'Networking & Security',
+    items: ['TCP/IP', 'Routing & Switching', 'VLANs', 'OSPF', 'DNS', 'Firewall fundamentals', 'Cisco Packet Tracer', 'Network analysis (Wireshark)'],
   },
   {
-    category: 'Databases',
-    items: ['Oracle SQL', 'SQL', 'Database Design'],
+    category: 'Systems & Databases',
+    items: ['Linux (command line)', 'MySQL', 'Oracle Database', 'PL/SQL'],
   },
   {
-    category: 'Cybersecurity',
-    items: ['Network Security', 'Encryption', 'Penetration Testing', 'Security Protocols', 'Threat Analysis'],
-  },
-  {
-    category: 'Other',
-    items: ['Machine Learning', 'Deep Learning', 'IoT'],
+    category: 'Systems & Scripting',
+    items: ['Bash (basic)', 'MATLAB'],
   },
 ]
